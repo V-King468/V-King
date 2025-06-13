@@ -1,9 +1,4 @@
 body {
-  background-image: url('https://v-king468.github.io/V-King/vking-background.jpg');
- background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
   background-color: #121212;
 
   color: #e0e0e0;
@@ -11,6 +6,7 @@ body {
   text-align: center;
   padding: 30px;
 }
+
 h1, h2 {
   color: #ffcc00;
 }
