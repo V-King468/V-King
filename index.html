@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>All Brawlers Poll - V-King</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 0 10px;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    #buttons-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    button {
+      padding: 8px 12px;
+      border: none;
+      background-color: #008CBA;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #005f73;
+    }
+    #results {
+      margin-top: 30px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>All Brawlers</h1>
+  <p style="text-align:center;">
+    List of all brawlers in Brawl Stars. Check their stats and learn more about them.
+  </p>
+
+  <h2>Vote for your favorite Brawler!</h2>
+
+  <div id="buttons-container">
+    <button onclick="vote('Kaze')">Kaze</button>
+    <button onclick="vote('Jae-Yong')">Jae-Yong</button>
+    <button onclick="vote('Finx')">Finx</button>
+    <button onclick="vote('Lumi')">Lumi</button>
+    <button onclick="vote('Ollie')">Ollie</button>
+    <button onclick="vote('Meeple')">Meeple</button>
+    <button onclick="vote('Buzz Lightyear')">Buzz Lightyear</button>
+    <button onclick="vote('Juju')">Juju</button>
+    <button onclick="vote('Shade')">Shade</button>
+    <button onclick="vote('Kenji')">Kenji</button>
+    <button onclick="vote('Moe')">Moe</button>
+    <button onclick="vote('Clancy')">Clancy</button>
+    <button onclick="vote('Berry')">Berry</button>
+    <button onclick="vote('Lily')">Lily</button>
+    <button onclick="vote('Draco')">Draco</button>
+    <button onclick="vote('Angelo')">Angelo</button>
+    <button onclick="vote('Melodie')">Melodie</button>
+    <button onclick="vote('Larry & Lawrie')">Larry & Lawrie</button>
+    <button onclick="vote('Kit')">Kit</button>
+    <button onclick="vote('Mico')">Mico</button>
+    <button onclick="vote('Charlie')">Charlie</button>
+    <button onclick="vote('Chuck')">Chuck</button>
+    <button onclick="vote('Pearl')">Pearl</button>
+    <button onclick="vote('Doug')">Doug</button>
+    <button onclick="vote('Cordelius')">Cordelius</button>
+    <button onclick="vote('Hank')">Hank</button>
+    <button onclick="vote('Maisie')">Maisie</button>
+    <button onclick="vote('Willow')">Willow</button>
+    <button onclick="vote('R-T')">R-T</button>
+    <button onclick="vote('Mandy')">Mandy</button>
+    <button onclick="vote('Gray')">Gray</button>
+    <button onclick="vote('Chester')">Chester</button>
+    <button onclick="vote('Buster')">Buster</button>
+    <button onclick="vote('Gus')">Gus</button>
+    <button onclick="vote('Sam')">Sam</button>
+    <button onclick="vote('Otis')">Otis</button>
+    <button onclick="vote('Bonnie')">Bonnie</button>
+    <button onclick="vote('Janet')">Janet</button>
+    <button onclick="vote('Eve')">Eve</button>
+    <button onclick="vote('Fang')">Fang</button>
+    <button onclick="vote('Lola')">Lola</button>
+    <button onclick="vote('Meg')">Meg</button>
+    <button onclick="vote('Ash')">Ash</button>
+    <button onclick="vote('Griff')">Griff</button>
+    <button onclick="vote('Buzz')">Buzz</button>
+    <button onclick="vote('Grom')">Grom</button>
+    <button onclick="vote('Squeak')">Squeak</button>
+    <button onclick="vote('Belle')">Belle</button>
+    <button onclick="vote('Stu')">Stu</button>
+    <button onclick="vote('Ruffs')">Ruffs</button>
+    <button onclick="vote('Edgar')">Edgar</button>
+    <button onclick="vote('Byron')">Byron</button>
+    <button onclick="vote('Lou')">Lou</button>
+    <button onclick="vote('Amber')">Amber</button>
+    <button onclick="vote('Colette')">Colette</button>
+    <button onclick="vote('Surge')">Surge</button>
+    <button onclick="vote('Sprout')">Sprout</button>
+    <button onclick="vote('Nani')">Nani</button>
+    <button onclick="vote('Gale')">Gale</button>
+    <button onclick="vote('Jacky')">Jacky</button>
+    <button onclick="vote('Max')">Max</button>
+    <button onclick="vote('Mr. P')">Mr. P</button>
+    <button onclick="vote('Emz')">Emz</button>
+    <button onclick="vote('Bea')">Bea</button>
+    <button onclick="vote('Sandy')">Sandy</button>
+    <button onclick="vote('8-Bit')">8-Bit</button>
+    <button onclick="vote('Bibi')">Bibi</button>
+    <button onclick="vote('Carl')">Carl</button>
+    <button onclick="vote('Rosa')">Rosa</button>
+    <button onclick="vote('Leon')">Leon</button>
+    <button onclick="vote('Tick')">Tick</button>
+    <button onclick="vote('Gene')">Gene</button>
+    <button onclick="vote('Frank')">Frank</button>
+    <button onclick="vote('Penny')">Penny</button>
+    <button onclick="vote('Darryl')">Darryl</button>
+    <button onclick="vote('Tara')">Tara</button>
+    <button onclick="vote('Pam')">Pam</button>
+    <button onclick="vote('Piper')">Piper</button>
+    <button onclick="vote('Bo')">Bo</button>
+    <button onclick="vote('Poco')">Poco</button>
+    <button onclick="vote('Crow')">Crow</button>
+    <button onclick="vote('Mortis')">Mortis</button>
+    <button onclick="vote('El Primo')">El Primo</button>
+    <button onclick="vote('Dynamike')">Dynamike</button>
+    <button onclick="vote('Nita')">Nita</button>
+    <button onclick="vote('Jessie')">Jessie</button>
+    <button onclick="vote('Barley')">Barley</button>
+    <button onclick="vote('Spike')">Spike</button>
+    <button onclick="vote('Rico')">Rico</button>
+    <button onclick="vote('Brock')">Brock</button>
+    <button onclick="vote('Bull')">Bull</button>
+    <button onclick="vote('Colt')">Colt</button>
+    <button onclick="vote('Shelly')">Shelly</button>
+  </div>
+
+  <div id="results"></div>
+
+  <script type="module" src="poll.js"></script>
+  <script type="module" src="poll.js"></script>
+</body>
+</html>
