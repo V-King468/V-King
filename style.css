@@ -132,9 +132,3 @@ body {
     0 0 30px #1e90ff;
   border-color: #1e90ff;
 }
-@media (max-width: 768px) {
-  body {
-    animation: none;
-    background-position: center;
-  }
-}
