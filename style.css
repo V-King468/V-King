@@ -244,3 +244,8 @@ a.youtube-button {
 .youtube-button {
   margin-top: 0; /* за да няма допълнително горно разстояние */
 }
+a.youtube-button,
+a.telegram-button {
+  margin: 15px auto; /* auto ляво и дясно центрира блока */
+  display: flex; /* запазва центриране на текста вътре */
+}
