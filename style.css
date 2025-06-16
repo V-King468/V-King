@@ -175,52 +175,101 @@ a:hover {
   100% {
     transform: scale(1.05);
   }
-} 
-#game-section {
-  margin-top: 60px;
+}
+@media (max-width: 480px) {
+  .profile-logo {
+    width: 90px;
+    height: 90px;
+  }
+
+  h1, h2 {
+    font-size: 1.2rem;
+  }
+
+  p, a {
+    font-size: 0.9rem;
+  }
+}
+a.extra-button {
+  background-color: #008cff;
   color: white;
+  font-weight: bold;
+  box-shadow: 0 0 10px #008cff, 0 0 20px #3399ff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 10px;
+}
+
+a.telegram-button {
+  display: inline-block;
+  width: 260px; /* същата ширина като YouTube бутона (проверено) */
+  background-color: #0088cc;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 10px #0088cc, 0 0 20px #33aaff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
   text-align: center;
 }
 
-#game-section canvas {
-  max-width: 90%;
+a.telegram-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #0088cc, 0 0 30px #33aaff;
+}a.telegram-button {
+  display: inline-block;
+  width: 260px; /* същата ширина като YouTube бутона */
+  background-color: #0088cc; /* типичен Telegram син */
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 10px #0088cc, 0 0 20px #33aaff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 15px; /* разстояние над бутона */
+  padding: 10px 20px;
   border-radius: 10px;
-  margin-top: 20px;
+  text-decoration: none;
+  text-align: center;
 }
 
-#game-section p {
-  margin-top: 10px;
-  font-size: 1.2rem;
-  color: #00ffcc;
-  text-shadow: 0 0 5px #00ffcc;
+a.telegram-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #0088cc, 0 0 30px #33aaff;
 }
-canvas {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-}
-button {
-  font-size: 4vw; /* ще е по-голям на телефони */
-  padding: 2vh 4vw;
-}
-#touch-controls {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-  z-index: 1000;
-}
-#touch-controls button {
-  font-size: 6vw;
-  padding: 10px;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid white;
+a.youtube-button,
+a.telegram-button {
+  display: inline-block;
+  width: 260px;       /* еднаква ширина */
+  height: 50px;       /* фиксирана височина */
+  line-height: 50px;  /* за вертикално центриране на текста */
+  padding: 0 20px;    /* само хоризонтално */
+  font-weight: bold;
   border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box; /* за да не расте ширината от padding */
+}
+
+a.youtube-button {
+  background-color: #ff0000;
   color: white;
+  box-shadow: 0 0 10px #ff0000, 0 0 20px #ff3333;
+}
+
+a.youtube-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff0000, 0 0 30px #ff3333;
+}
+
+a.telegram-button {
+  background-color: #0088cc;
+  color: white;
+  box-shadow: 0 0 10px #0088cc, 0 0 20px #33aaff;
+  margin-top: 15px;
+}
+
+a.telegram-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #0088cc, 0 0 30px #33aaff;
 }
