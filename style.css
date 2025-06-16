@@ -249,3 +249,89 @@ a.telegram-button {
   margin: 15px auto; /* auto ляво и дясно центрира блока */
   display: flex; /* запазва центриране на текста вътре */
 }
+}
+footer {
+  margin-top: 40px;
+  padding: 20px; /* за десктоп */
+  background-color: #111;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* За телефони с ширина до 480px намаляме padding */
+@media (max-width: 480px) {
+  footer {
+    padding: 8px 10px; /* по-тънка лента */
+    font-size: 0.8rem; /* ако искаш, можеш да намалиш и шрифта */
+  }
+}
+footer {
+  margin-top: 40px;
+  padding: 10px 20px;    /* по-тънък от 20px */
+  background-color: #111;
+  color: #888;
+  font-size: 0.9rem;
+  text-align: center;    /* центрирам текста */
+}
+
+/* За телефони с ширина до 480px */
+@media (max-width: 480px) {
+  footer {
+    padding: 6px 10px;    /* още по-тънък футър */
+    font-size: 0.8rem;
+  }
+}
+footer {
+  text-align: center; /* центрира текста */
+  display: flex;
+  justify-content: center; /* хоризонтално центриране */
+  align-items: center;     /* вертикално центриране */
+  padding: 10px 20px;
+  margin-top: 40px;
+  background-color: #111;
+  color: #888;
+  font-size: 0.9rem;
+}
+footer {
+  text-align: center;      /* центрира текста хоризонтално */
+  padding: 10px 20px;
+  margin-top: 40px;
+  background-color: #111;
+  color: #888;
+  font-size: 0.9rem;
+  display: block;          /* увери се, че е блоков елемент */
+}
+footer {
+  padding: 10px 20px;      /* по-малко от горе и отдолу */
+  text-align: center;      /* центрира текста */
+  background-color: #111;
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+@media (max-width: 600px) {
+  footer {
+    padding: 5px 10px;     /* още по-малко padding за малки екрани */
+  }
+}
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #111;  /* Тази лента */
+  color: #888;
+  font-size: 0.9rem;
+}
+footer {
+  padding: 5px 10px;     /* намалява височината на лентата */
+  background-color: #111; /* или какъвто имаш фон */
+  color: #888;
+  font-size: 0.9rem;
+  text-align: center;    /* центрира текста хоризонтално */
+  line-height: 1.2;      /* по-малко разстояние между редовете */
+}
+@media (max-width: 600px) {
+  footer {
+    padding: 3px 8px;    /* още по-малко padding на малък екран */
+    font-size: 0.8rem;   /* по-малък шрифт */
+  }
+}
