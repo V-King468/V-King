@@ -10,8 +10,9 @@
 <link rel="manifest" href="favicon_io/site.webmanifest">
 
   <meta charset="UTF-8" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <meta name="description" content="Welcome to the official V-King site - gamer, creator and future tech legend!">
+<meta name="author" content="Vasilios / V-King">
  
   <title>Official site - V-King🔥</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -30,27 +31,18 @@
     <img src="https://yt3.googleusercontent.com/Gk2tJSoBAdzfKUS5DxDTbRxc-0I2JaxWAbn39hHVwCq8do7Ol1Td4ExEfhfO9xq0aX2i5v6Kyg=s160-c-k-c0x00ffffff-no-rj" alt="V-King Profile" class="profile-logo">
     <h2 id="about" class="yellow-neon">About me</h2>
     <p>I am Vasilios (V-King), a creator👻, a gamer🎮 and a future tech legend💻!⭐</p>
-    <a href="https://www.youtube.com/channel/UC1n5jBB1bjw82KferizmssQ" class="youtube-button" target="_blank" id="youtube">👉 Visit my YouTube channel</a>
-    <h2 id="contact">Contact</h2>
+    <a href="https://www.youtube.com/channel/UC1n5jBB1bjw82KferizmssQ" class="youtube-button" target="_blank">👉 Visit my YouTube channel</a>
+<br>
+<a href="https://t.me/vking" class="telegram-button" target="_blank">👉 Join my Telegram</a>
     <p>If you want to get in touch, send me an email:</p>
     <a href="mailto:contact.vking.official@gmail.com" class="email-link">contact.vking.official@gmail.com</a>
   </div>
-  <div id="touch-controls">
-  <button id="left">⬅️</button>
-  <button id="jump">🔼</button>
-  <button id="right">➡️</button>
-</div>
   <script>
     window.onload = function () {
       document.getElementById("loader").style.display = "none";
       document.getElementById("content").style.display = "block";
     };
   </script>
-  <section id="game-section">
-  <h2 class="yellow-neon">🎮 Play the Chill Hacker Game</h2>
-  <canvas id="gameCanvas" width="800" height="300"></canvas>
-  <p>Score: <span id="score">0</span> | High Score: <span id="highScore">0</span></p>
-</section>
   <footer>
   <p>© 2025 V-King. All rights reserved.</p>
 </footer>
@@ -96,114 +88,6 @@
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
   });
-</script>
-<script>
-  const canvasGame = document.getElementById("gameCanvas");
-  const ctxGame = canvasGame.getContext("2d");
-
-  canvasGame.style.background = "#000";
-  canvasGame.style.border = "2px solid #00ff00";
-  canvasGame.style.boxShadow = "0 0 10px #00ff00";
-
-  let score = 0;
-  let highScore = localStorage.getItem("vkingHighScore") || 0;
-  document.getElementById("highScore").textContent = highScore;
-
-  const player = { x: 50, y: 250, width: 30, height: 30, vy: 0, gravity: 1.2, jump: -18, grounded: true };
-
-  let obstacles = [];
-  let gameOver = false;
-
-  function drawPlayer() {
-    ctxGame.fillStyle = "#00ff00";
-    ctxGame.fillRect(player.x, player.y, player.width, player.height);
-  }
-
-  function drawObstacles() {
-    ctxGame.fillStyle = "#ff0000";
-    obstacles.forEach(obs => ctxGame.fillRect(obs.x, obs.y, obs.width, obs.height));
-  }
-
-  function updateObstacles() {
-    obstacles.forEach(obs => obs.x -= 6);
-    if (obstacles.length === 0 || obstacles[obstacles.length - 1].x < 500) {
-      const height = 30 + Math.random() * 50;
-      obstacles.push({ x: canvasGame.width, y: canvasGame.height - height, width: 20, height: height });
-    }
-    obstacles = obstacles.filter(obs => obs.x + obs.width > 0);
-  }
-
-  function checkCollision() {
-    for (let obs of obstacles) {
-      if (
-        player.x < obs.x + obs.width &&
-        player.x + player.width > obs.x &&
-        player.y < obs.y + obs.height &&
-        player.y + player.height > obs.y
-      ) {
-        gameOver = true;
-        if (score > highScore) {
-          highScore = score;
-          localStorage.setItem("vkingHighScore", highScore);
-        }
-      }
-    }
-  }
-
-  function updateGame() {
-    if (gameOver) {
-      ctxGame.fillStyle = "#ff0000";
-      ctxGame.font = "30px monospace";
-      ctxGame.fillText("Game Over! Press R to Restart", 150, 150);
-      return;
-    }
-
-    ctxGame.clearRect(0, 0, canvasGame.width, canvasGame.height);
-    drawPlayer();
-    drawObstacles();
-    updateObstacles();
-
-    // gravity
-    player.vy += player.gravity;
-    player.y += player.vy;
-
-    if (player.y + player.height >= canvasGame.height) {
-      player.y = canvasGame.height - player.height;
-      player.vy = 0;
-      player.grounded = true;
-    }
-
-    checkCollision();
-
-    // score
-    score++;
-    document.getElementById("score").textContent = score;
-    document.getElementById("highScore").textContent = highScore;
-
-    requestAnimationFrame(updateGame);
-  }
-
-  function jump() {
-    if (player.grounded) {
-      player.vy = player.jump;
-      player.grounded = false;
-    }
-  }
-
-  document.addEventListener("keydown", (e) => {
-    if (e.code === "Space" || e.code === "ArrowUp") jump();
-    if (e.code === "KeyR" && gameOver) {
-      // restart
-      obstacles = [];
-      score = 0;
-      gameOver = false;
-      player.y = 250;
-      player.vy = 0;
-      updateGame();
-    }
-  });
-
-  updateGame();
 </script>
 </body>
 </html>
