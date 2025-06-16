@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
@@ -10,8 +9,8 @@
 <link rel="icon" sizes="512x512" href="favicon_io/android-chrome-512x512.png">
 <link rel="manifest" href="favicon_io/site.webmanifest">
 
-
   <meta charset="UTF-8" />
+ 
   <title>Official site - V-King🔥</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
@@ -40,6 +39,11 @@
       document.getElementById("content").style.display = "block";
     };
   </script>
+  <section id="game-section">
+  <h2 class="yellow-neon">🎮 Play the Chill Hacker Game</h2>
+  <canvas id="gameCanvas" width="800" height="300"></canvas>
+  <p>Score: <span id="score">0</span> | High Score: <span id="highScore">0</span></p>
+</section>
   <footer>
   <p>© 2025 V-King. All rights reserved.</p>
 </footer>
@@ -85,6 +89,114 @@
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
   });
+</script>
+<script>
+  const canvasGame = document.getElementById("gameCanvas");
+  const ctxGame = canvasGame.getContext("2d");
+
+  canvasGame.style.background = "#000";
+  canvasGame.style.border = "2px solid #00ff00";
+  canvasGame.style.boxShadow = "0 0 10px #00ff00";
+
+  let score = 0;
+  let highScore = localStorage.getItem("vkingHighScore") || 0;
+  document.getElementById("highScore").textContent = highScore;
+
+  const player = { x: 50, y: 250, width: 30, height: 30, vy: 0, gravity: 1.2, jump: -18, grounded: true };
+
+  let obstacles = [];
+  let gameOver = false;
+
+  function drawPlayer() {
+    ctxGame.fillStyle = "#00ff00";
+    ctxGame.fillRect(player.x, player.y, player.width, player.height);
+  }
+
+  function drawObstacles() {
+    ctxGame.fillStyle = "#ff0000";
+    obstacles.forEach(obs => ctxGame.fillRect(obs.x, obs.y, obs.width, obs.height));
+  }
+
+  function updateObstacles() {
+    obstacles.forEach(obs => obs.x -= 6);
+    if (obstacles.length === 0 || obstacles[obstacles.length - 1].x < 500) {
+      const height = 30 + Math.random() * 50;
+      obstacles.push({ x: canvasGame.width, y: canvasGame.height - height, width: 20, height: height });
+    }
+    obstacles = obstacles.filter(obs => obs.x + obs.width > 0);
+  }
+
+  function checkCollision() {
+    for (let obs of obstacles) {
+      if (
+        player.x < obs.x + obs.width &&
+        player.x + player.width > obs.x &&
+        player.y < obs.y + obs.height &&
+        player.y + player.height > obs.y
+      ) {
+        gameOver = true;
+        if (score > highScore) {
+          highScore = score;
+          localStorage.setItem("vkingHighScore", highScore);
+        }
+      }
+    }
+  }
+
+  function updateGame() {
+    if (gameOver) {
+      ctxGame.fillStyle = "#ff0000";
+      ctxGame.font = "30px monospace";
+      ctxGame.fillText("Game Over! Press R to Restart", 150, 150);
+      return;
+    }
+
+    ctxGame.clearRect(0, 0, canvasGame.width, canvasGame.height);
+    drawPlayer();
+    drawObstacles();
+    updateObstacles();
+
+    // gravity
+    player.vy += player.gravity;
+    player.y += player.vy;
+
+    if (player.y + player.height >= canvasGame.height) {
+      player.y = canvasGame.height - player.height;
+      player.vy = 0;
+      player.grounded = true;
+    }
+
+    checkCollision();
+
+    // score
+    score++;
+    document.getElementById("score").textContent = score;
+    document.getElementById("highScore").textContent = highScore;
+
+    requestAnimationFrame(updateGame);
+  }
+
+  function jump() {
+    if (player.grounded) {
+      player.vy = player.jump;
+      player.grounded = false;
+    }
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.code === "Space" || e.code === "ArrowUp") jump();
+    if (e.code === "KeyR" && gameOver) {
+      // restart
+      obstacles = [];
+      score = 0;
+      gameOver = false;
+      player.y = 250;
+      player.vy = 0;
+      updateGame();
+    }
+  });
+
+  updateGame();
 </script>
 </body>
 </html>
