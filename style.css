@@ -28,8 +28,8 @@ h1.neon {
 
 h2 {
   margin-top: 40px;
-  color: #ffa600;
-  text-shadow: 0 0 5px #ffc800, 0 0 10px #ffb833, 0 0 20px #ffa600, 0 0 30px #ffb833;
+  color: #ffc800;
+  text-shadow: 0 0 5px #ffa600, 0 0 10px #ffb833, 0 0 20px #ffa600, 0 0 30px #ffb833;
   font-weight: bold;
 }
 
@@ -175,4 +175,22 @@ a:hover {
   100% {
     transform: scale(1.05);
   }
+} 
+#game-section {
+  margin-top: 60px;
+  color: white;
+  text-align: center;
+}
+
+#game-section canvas {
+  max-width: 90%;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+#game-section p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #00ffcc;
+  text-shadow: 0 0 5px #00ffcc;
 }
