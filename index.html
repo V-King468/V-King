@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon_io/favicon-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+<link rel="icon" sizes="512x512" href="favicon_io/android-chrome-512x512.png">
+<link rel="manifest" href="favicon_io/site.webmanifest">
+
+  <meta charset="UTF-8" />
+ 
+  <meta name="description" content="Welcome to the official V-King site - gamer, creator and future tech legend!">
+<meta name="author" content="Vasilios / V-King">
+ 
+  <title>Official site - V-King🔥</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png" />
+  <link rel="manifest" href="favicon_io/site.webmanifest" />
+  <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+  <div id="loader">Loading...</div>
+  <div id="content" style="display:none;">
+    <h1 class="neon">Hello guys xD</h1>
+    <h1>This is the official site - V-King🦁👑</h1>
+    <img src="https://yt3.googleusercontent.com/Gk2tJSoBAdzfKUS5DxDTbRxc-0I2JaxWAbn39hHVwCq8do7Ol1Td4ExEfhfO9xq0aX2i5v6Kyg=s160-c-k-c0x00ffffff-no-rj" alt="V-King Profile" class="profile-logo">
+    <h2 id="about" class="yellow-neon">About me</h2>
+    <p>I am Vasilios (V-King), a creator👻, a gamer🎮 and a future tech legend💻!⭐</p>
+    <a href="https://www.youtube.com/channel/UC1n5jBB1bjw82KferizmssQ" class="youtube-button" target="_blank">👉 Visit my YouTube channel</a>
+<br>
+<a href="https://t.me/vking" class="telegram-button" target="_blank">👉 Join my Telegram</a>
+    <p>If you want to get in touch, send me an email:</p>
+    <a href="mailto:contact.vking.official@gmail.com" class="email-link">contact.vking.official@gmail.com</a>
+  </div>
+  <script>
+    window.onload = function () {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("content").style.display = "block";
+    };
+  </script>
+  <footer>
+  <p>© 2025 V-King. All rights reserved.</p>
+</footer>
+<canvas id="matrixCanvas"></canvas>
+<script>
+  const canvas = document.getElementById("matrixCanvas");
+  const ctx = canvas.getContext("2d");
+
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+
+  const letters = "01";
+  const fontSize = 16;
+  const columns = canvas.width / fontSize;
+
+  const drops = [];
+  for (let i = 0; i < columns; i++) {
+    drops[i] = 1;
+  }
+
+  function draw() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#00ff00";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = letters.charAt(Math.floor(Math.random() * letters.length));
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+
+      drops[i]++;
+    }
+  }
+
+  setInterval(draw, 35);
+
+  window.addEventListener("resize", () => {
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+  });
+</script>
+</body>
+</html>
