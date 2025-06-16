@@ -335,3 +335,17 @@ footer {
     font-size: 0.8rem;   /* по-малък шрифт */
   }
 }
+footer {
+  padding: 5px 10px;     /* намалява височината на лентата */
+  background-color: #111; /* или какъвто имаш фон */
+  color: #888;
+  font-size: 0.9rem;
+  text-align: center;    /* центрира текста хоризонтално */
+  line-height: 1.2;      /* по-малко разстояние между редовете */
+}
+@media (max-width: 600px) {
+  footer {
+    padding: 3px 8px;    /* още по-малко padding на малък екран */
+    font-size: 0.8rem;   /* по-малък шрифт */
+  }
+}
