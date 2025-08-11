@@ -32,8 +32,14 @@ h2.yellow-neon {
   text-shadow: 0 0 5px #ffff00, 0 0 10px #ffff00, 0 0 20px #ffea00, 0 0 40px #ffd700;
 }
 
+h2.orange-neon {
+  color: #ffa500;
+  text-shadow: 0 0 5px #ffa500, 0 0 10px #ffb347, 0 0 20px #ffa500, 0 0 30px #ffb347;
+  font-weight: bold;
+}
+
 p {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 a {
@@ -56,18 +62,16 @@ a:hover {
 
 a.youtube-button,
 a.telegram-button {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 260px;
   height: 50px;
-  display: flex;
-align-items: center;
-justify-content: center;
   font-weight: bold;
   font-size: 1rem;
   border-radius: 10px;
   text-decoration: none;
-  text-align: center;
-  margin-top: 15px;
+  margin: 15px auto;
   box-sizing: border-box;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -169,183 +173,50 @@ a.extra-button {
 
 footer {
   margin-top: 40px;
-  padding: 20px;
+  padding: 10px 20px;
   background-color: #111;
   color: #888;
   font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.2;
 }
 
-#matrixCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background: black;
-}
+@media (max-width: 600px) {
+  footer {
+    padding: 3px 8px;
+    font-size: 0.8rem;
+  }
 
-@media (max-width: 768px) {
   h1 { font-size: 1.6rem; }
   h2 { font-size: 1.2rem; }
   p, a { font-size: 1rem; }
 }
 
 @media (max-width: 480px) {
+  footer {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
   .profile-logo {
     width: 90px;
     height: 90px;
   }
+
   h1, h2 { font-size: 1.2rem; }
   p, a { font-size: 0.9rem; }
 }
-h2.orange-neon {
-  color: #ffa500;
-  text-shadow: 0 0 5px #ffa500, 0 0 10px #ffb347, 0 0 20px #ffa500, 0 0 30px #ffb347;
-  font-weight: bold;
+#matrixCanvas {
+  position: fixed;    /* Фиксираме го да стои винаги на екрана */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;        /* Задаваме го да е под всичко останало */
+  background: black;  /* Фонът му е черен */
 }
-a.youtube-button,
-a.atelegram-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 260px;
-  height: 50px;
-  font-weight: bold;
-  font-size: 1rem;
-  border-radius: 10px;
-  text-decoration: none;
-  margin: 15px auto;  /* <--- това е важно */
-  box-sizing: border-box;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-@media (max-width: 600px) {
-  .button-container {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-.telegram-button {
-  display: block;      /* прави бутона да се държи като блок елемент */
-  width: max-content;  /* ширината да е според съдържанието */
-  margin: 0 auto;      /* центриране хоризонтално */
-}
-p {
-  margin-bottom: 40px; /* повече разстояние под параграфа */
-}
-
 a.youtube-button {
-  margin-top: 30px; /* повече разстояние над бутона */
-}
-.about-text {
-  margin-bottom: 50px;
-}
-
-.youtube-button {
-  margin-top: 0; /* за да няма допълнително горно разстояние */
-}
-a.youtube-button,
-a.telegram-button {
-  margin: 15px auto; /* auto ляво и дясно центрира блока */
-  display: flex; /* запазва центриране на текста вътре */
-}
-}
-footer {
-  margin-top: 40px;
-  padding: 20px; /* за десктоп */
-  background-color: #111;
-  color: #888;
-  font-size: 0.9rem;
-}
-
-/* За телефони с ширина до 480px намаляме padding */
-@media (max-width: 480px) {
-  footer {
-    padding: 8px 10px; /* по-тънка лента */
-    font-size: 0.8rem; /* ако искаш, можеш да намалиш и шрифта */
-  }
-}
-footer {
-  margin-top: 40px;
-  padding: 10px 20px;    /* по-тънък от 20px */
-  background-color: #111;
-  color: #888;
-  font-size: 0.9rem;
-  text-align: center;    /* центрирам текста */
-}
-
-/* За телефони с ширина до 480px */
-@media (max-width: 480px) {
-  footer {
-    padding: 6px 10px;    /* още по-тънък футър */
-    font-size: 0.8rem;
-  }
-}
-footer {
-  text-align: center; /* центрира текста */
-  display: flex;
-  justify-content: center; /* хоризонтално центриране */
-  align-items: center;     /* вертикално центриране */
-  padding: 10px 20px;
-  margin-top: 40px;
-  background-color: #111;
-  color: #888;
-  font-size: 0.9rem;
-}
-footer {
-  text-align: center;      /* центрира текста хоризонтално */
-  padding: 10px 20px;
-  margin-top: 40px;
-  background-color: #111;
-  color: #888;
-  font-size: 0.9rem;
-  display: block;          /* увери се, че е блоков елемент */
-}
-footer {
-  padding: 10px 20px;      /* по-малко от горе и отдолу */
-  text-align: center;      /* центрира текста */
-  background-color: #111;
-  color: #888;
-  font-size: 0.9rem;
-  margin-top: 40px;
-}
-@media (max-width: 600px) {
-  footer {
-    padding: 5px 10px;     /* още по-малко padding за малки екрани */
-  }
-}
-footer {
-  margin-top: 40px;
-  padding: 20px;
-  background-color: #111;  /* Тази лента */
-  color: #888;
-  font-size: 0.9rem;
-}
-footer {
-  padding: 5px 10px;     /* намалява височината на лентата */
-  background-color: #111; /* или какъвто имаш фон */
-  color: #888;
-  font-size: 0.9rem;
-  text-align: center;    /* центрира текста хоризонтално */
-  line-height: 1.2;      /* по-малко разстояние между редовете */
-}
-@media (max-width: 600px) {
-  footer {
-    padding: 3px 8px;    /* още по-малко padding на малък екран */
-    font-size: 0.8rem;   /* по-малък шрифт */
-  }
-}
-footer {
-  padding: 5px 10px;     /* намалява височината на лентата */
-  background-color: #111; /* или какъвто имаш фон */
-  color: #888;
-  font-size: 0.9rem;
-  text-align: center;    /* центрира текста хоризонтално */
-  line-height: 1.2;      /* по-малко разстояние между редовете */
-}
-@media (max-width: 600px) {
-  footer {
-    padding: 3px 8px;    /* още по-малко padding на малък екран */
-    font-size: 0.8rem;   /* по-малък шрифт */
-  }
+  white-space: nowrap; /* не позволява текста да се чупи на нов ред */
+  overflow: hidden;    /* скрива излишното, ако текста е твърде дълъг */
+  text-overflow: ellipsis; /* добавя „...” ако текста е много дълъг */
 }
