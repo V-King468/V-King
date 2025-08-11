@@ -1,98 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="favicon_io/favicon-192x192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
-<link rel="icon" sizes="512x512" href="favicon_io/android-chrome-512x512.png">
-<link rel="manifest" href="favicon_io/site.webmanifest">
+  <head>
+    <!-- Meta тагове -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Welcome to the official V-King site - gamer, creator and future tech legend!"
+    />
+    <meta
+      name="keywords"
+      content="V-King, vking, Vasilios, vking468, gamer, brawl stars, official site, YouTube, V-King Bulgaria, V-King YouTube"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Vasilios / V-King" />
 
-  <meta charset="UTF-8" />
- 
-  <meta name="description" content="Welcome to the official V-King site - gamer, creator and future tech legend!">
-  <meta name="keywords" content="V-King, vking, Vasilios, vking468, gamer, brawl stars, official site, YouTube, V-King Bulgaria, V-King YouTube">
-<meta name="robots" content="index, follow">
-<meta name="author" content="Vasilios / V-King">
-  <meta name="robots" content="index, follow">
-<meta name="keywords" content="V-King, Vasilios, gaming, YouTube, Brawl Stars, tech, site, hacker, matrix">
- 
-  <title>Official site - V-King🔥</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png" />
-  <link rel="manifest" href="favicon_io/site.webmanifest" />
-  <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon" />
-</head>
-<body>
-  <div id="loader">Loading...</div>
-  <div id="content" style="display:none;">
-    <h1 class="neon">Hello guys xD</h1>
-    <h1>This is the official site - V-King🦁👑</h1>
-    <img src="https://yt3.googleusercontent.com/Gk2tJSoBAdzfKUS5DxDTbRxc-0I2JaxWAbn39hHVwCq8do7Ol1Td4ExEfhfO9xq0aX2i5v6Kyg=s160-c-k-c0x00ffffff-no-rj" alt="V-King Profile" class="profile-logo">
-    <h2 id="about" class="yellow-neon">About me</h2>
-    <p>I am Vasilios (V-King), a creator👻, a gamer🎮 and a future tech legend💻!⭐</p>
-    <a href="https://www.youtube.com/channel/UC1n5jBB1bjw82KferizmssQ" class="youtube-button" target="_blank">👉 Visit my YouTube channel</a>
-<br>
-<a href="https://t.me/vking" class="telegram-button" target="_blank">👉 Join my Telegram</a>
-  <h2 class="orange-neon">Contact</h2>
-<p>If you want to get in touch, send me an email:</p>
-    <a href="mailto:contact.vking.official@gmail.com" class="email-link">contact.vking.official@gmail.com</a>
-  </div>
-  <script>
-    window.onload = function () {
-      document.getElementById("loader").style.display = "none";
-      document.getElementById("content").style.display = "block";
-    };
-  </script>
-  <footer>
-  <p>© 2025 V-King. All rights reserved.</p>
-</footer>
-<canvas id="matrixCanvas"></canvas>
-<script>
-  const canvas = document.getElementById("matrixCanvas");
-  const ctx = canvas.getContext("2d");
+    <!-- Favicons -->
+    <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon_io/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      sizes="512x512"
+      href="favicon_io/android-chrome-512x512.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon_io/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="favicon_io/site.webmanifest" />
 
-  canvas.height = window.innerHeight;
-  canvas.width = window.innerWidth;
+    <title>Official site - V-King🔥</title>
 
-  const letters = "01";
-  const fontSize = 16;
-  const columns = canvas.width / fontSize;
+    <!-- Външен CSS файл -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  const drops = [];
-  for (let i = 0; i < columns; i++) {
-    drops[i] = 1;
-  }
+  <body>
+    <!-- Loader -->
+    <div id="loader">Loading...</div>
 
-  function draw() {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    <!-- Основно съдържание - скрито по начало -->
+    <div id="content" class="hidden">
+      <h1 class="neon">Welcome to V-King's realm!</h1>
+      <h1>This is the official site - V-King🦁👑</h1>
 
-    ctx.fillStyle = "#00ff00";
-    ctx.font = fontSize + "px monospace";
+      <img
+        src="https://yt3.googleusercontent.com/Gk2tJSoBAdzfKUS5DxDTbRxc-0I2JaxWAbn39hHVwCq8do7Ol1Td4ExEfhfO9xq0aX2i5v6Kyg=s160-c-k-c0x00ffffff-no-rj"
+        alt="V-King profile picture with cool style"
+        class="profile-logo"
+      />
 
-    for (let i = 0; i < drops.length; i++) {
-      const text = letters.charAt(Math.floor(Math.random() * letters.length));
-      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      <h2 id="about" class="yellow-neon">About me</h2>
+      <p>
+        I am Vasilios (V-King), a creator👻, a gamer🎮 and a future tech
+        legend💻!⭐
+      </p>
 
-      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-        drops[i] = 0;
+      <a
+        href="https://www.youtube.com/channel/UC1n5jBB1bjw82KferizmssQ"
+        class="youtube-button"
+        target="_blank"
+        >👉 Visit my YouTube channel</a
+      >
+      <br />
+      <a href="https://t.me/vking" class="telegram-button" target="_blank"
+        >👉 Join my Telegram</a
+      >
+
+      <h2 class="orange-neon">Contact</h2>
+      <p>If you want to get in touch, send me an email:</p>
+      <a href="mailto:contact.vking.official@gmail.com" class="email-link"
+        >contact.vking.official@gmail.com</a
+      >
+    </div>
+
+    <!-- Скрипт за loader -->
+    <script>
+      window.onload = function () {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("content").classList.remove("hidden");
+      };
+    </script>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 V-King. All rights reserved.</p>
+    </footer>
+
+    <!-- Canvas за Matrix ефекта -->
+    <canvas id="matrixCanvas"></canvas>
+    <script>
+      // Matrix animation
+      const canvas = document.getElementById("matrixCanvas");
+      const ctx = canvas.getContext("2d");
+
+      function resizeCanvas() {
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
       }
 
-      drops[i]++;
-    }
-  }
+      resizeCanvas();
 
-  setInterval(draw, 35);
+      window.addEventListener("resize", () => {
+        resizeCanvas();
+        // При resize трябва да презаредим drops масива
+        columns = Math.floor(canvas.width / fontSize);
+        drops.length = columns;
+        for (let i = 0; i < drops.length; i++) {
+          drops[i] = 1;
+        }
+      });
 
-  window.addEventListener("resize", () => {
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
-  });
-</script>
-</body>
+      const letters = "01";
+      const fontSize = 16;
+      let columns = Math.floor(canvas.width / fontSize);
+
+      const drops = [];
+      for (let i = 0; i < columns; i++) {
+        drops[i] = 1;
+      }
+
+      function draw() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "#00ff00";
+        ctx.font = fontSize + "px monospace";
+
+        for (let i = 0; i < drops.length; i++) {
+          const text = letters.charAt(
+            Math.floor(Math.random() * letters.length)
+          );
+          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+          if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+          }
+
+          drops[i]++;
+        }
+      }
+
+      setInterval(draw, 35);
+    </script>
+  </body>
 </html>
